@@ -14,6 +14,8 @@
 #   about_triangle_project_2.rb
 #
 def triangle(a, b, c)
+  result = [a, b, c].uniq.length
+  result == 1 ? (return :equilateral) : result == 2 ? (return :isosceles) : (return :scalene)
   # WRITE THIS CODE
 end
 
