@@ -15,6 +15,11 @@
 #
 def triangle(a, b, c)
   result = [a, b, c].uniq.length
+  if [a, b, c].min <= 0
+    raise TriangleError, '0 exception'
+  end
+  a, b, c = [a, b, c].sort
+  raise TriangleError if a + b <= c
   result == 1 ? (return :equilateral) : result == 2 ? (return :isosceles) : (return :scalene)
   # WRITE THIS CODE
 end
